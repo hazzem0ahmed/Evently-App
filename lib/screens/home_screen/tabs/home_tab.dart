@@ -74,6 +74,9 @@ class _HomeTabState extends State<HomeTab> {
             } else if (snapshot.hasData) {
               var events =
                   snapshot.data?.docs.map((e) => e.data()).toList() ?? [];
+              if(events.isEmpty) {
+                return const Center(child: Text("No Events Found"));
+              }
               return Expanded(
                 child: ListView.separated(
                   separatorBuilder:
@@ -93,6 +96,7 @@ class _HomeTabState extends State<HomeTab> {
                         },
                         child: EventCard(eventsDM: events[index]),
                       ),
+
                 ),
               );
             } else {
