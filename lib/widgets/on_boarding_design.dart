@@ -32,7 +32,6 @@ class OnBoardingScreenDesign extends StatelessWidget {
               alignment: Alignment.center,
               child: Image.asset(AppAssets.appLogoHorizontal, width: size.width * 0.5),
             ),
-            //SizedBox(height: size.height * 0.02),
             Align(
               alignment: Alignment.center,
               child: Image.asset(
@@ -41,7 +40,6 @@ class OnBoardingScreenDesign extends StatelessWidget {
                 height: size.height * 0.5,
               ),
             ),
-            //SizedBox(height: size.height * 0.02),
             Text(title, style: Theme.of(context).textTheme.titleLarge),
             SizedBox(height: size.height * 0.02),
             Text(content, style: Theme.of(context).textTheme.bodyLarge),

@@ -74,44 +74,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                 ],
               ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        isFirstPage
-                            ? SizedBox()
-                            : IconButton(
-                              style: IconButton.styleFrom(
-                                iconSize: 30,
-                                shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                    width: 2,
-                                    color: Theme.of(context).colorScheme.primary,
-                                  ),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              onPressed: () {
-                                _pageController.previousPage(
-                                  duration: Duration(milliseconds: 300),
-                                  curve: Curves.easeIn,
-                                );
-                              },
-                              icon: Icon(Icons.arrow_back_outlined),
-                            ),
-                        Flexible(
-                          child: SmoothPageIndicator(
-                            axisDirection: Axis.horizontal,
-                            effect: ExpandingDotsEffect(),
-                            controller: _pageController,
-                            count: 3,
-                          ),
-                        ),
-                        IconButton(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    isFirstPage
+                        ? SizedBox()
+                        : IconButton(
                           style: IconButton.styleFrom(
                             iconSize: 30,
                             shape: RoundedRectangleBorder(
@@ -123,21 +93,46 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           ),
                           onPressed: () {
-                            if (isLastPage) {
-                              _confirmIsFirst();
-                            } else {
-                              _pageController.nextPage(
-                                duration: Duration(milliseconds: 300),
-                                curve: Curves.easeIn,
-                              );
-                            }
+                            _pageController.previousPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
                           },
-                          icon: Icon(Icons.arrow_forward_outlined),
+                          icon: Icon(Icons.arrow_back_outlined),
                         ),
-                      ],
+                    Flexible(
+                      child: SmoothPageIndicator(
+                        axisDirection: Axis.horizontal,
+                        effect: ExpandingDotsEffect(),
+                        controller: _pageController,
+                        count: 3,
+                      ),
                     ),
-                  ),
-                ],
+                    IconButton(
+                      style: IconButton.styleFrom(
+                        iconSize: 30,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 2,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
+                      onPressed: () {
+                        if (isLastPage) {
+                          _confirmIsFirst();
+                        } else {
+                          _pageController.nextPage(
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeIn,
+                          );
+                        }
+                      },
+                      icon: Icon(Icons.arrow_forward_outlined),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
