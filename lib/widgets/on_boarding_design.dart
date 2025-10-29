@@ -30,18 +30,18 @@ class OnBoardingScreenDesign extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.center,
-              child: Image.asset(AppAssets.appLogo, width: size.width * 0.3),
+              child: Image.asset(AppAssets.appLogoHorizontal, width: size.width * 0.5),
             ),
-            SizedBox(height: size.height * 0.02),
+            //SizedBox(height: size.height * 0.02),
             Align(
               alignment: Alignment.center,
               child: Image.asset(
                 image,
                 width: double.infinity,
-                height: size.height * 0.3,
+                height: size.height * 0.5,
               ),
             ),
-            SizedBox(height: size.height * 0.02),
+            //SizedBox(height: size.height * 0.02),
             Text(title, style: Theme.of(context).textTheme.titleLarge),
             SizedBox(height: size.height * 0.02),
             Text(content, style: Theme.of(context).textTheme.bodyLarge),
